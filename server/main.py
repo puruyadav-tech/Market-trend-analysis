@@ -44,7 +44,7 @@ app = FastAPI(
 )
 #  Allow your Vercel frontend
 origins = [
-    "https://market-trend-analysis.vercel.app", 
+    "https://market-trend-analysis-eight.vercel.app/, 
     "http://localhost:8080",                     # for local testing
 ]
 
