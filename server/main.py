@@ -29,7 +29,7 @@ import time
 # ---------- config ----------
 load_dotenv()
 API_KEY = os.getenv("MY_SECRET_API_KEY")
-ALPHA_VANTAGE_API_KEY = os.getenv("ALPHA_VANTAGE_API_KEY", API_KEY)
+# ALPHA_VANTAGE_API_KEY = os.getenv("ALPHA_VANTAGE_API_KEY", API_KEY)
 AV_BASE_URL = "https://www.alphavantage.co/query"
 
 # Logging
@@ -44,7 +44,7 @@ app = FastAPI(
 )
 #  Allow your Vercel frontend
 origins = [
-    "https://market-trend-analysis-eight.vercel.app/, 
+    "https://market-trend-analysis-eight.vercel.app", 
     "http://localhost:8080",                     # for local testing
 ]
 
@@ -229,7 +229,7 @@ def fetch_stock_data(symbol: str, outputsize: str = "compact", timeout: int = 10
     try:
         url = (
             f"{AV_BASE_URL}?function=TIME_SERIES_DAILY&symbol={symbol}"
-            f"&outputsize={outputsize}&apikey={ALPHA_VANTAGE_API_KEY}&datatype=csv"
+            f"&outputsize={outputsize}&apikey={API_KEY}&datatype=csv"
         )
         logger.info("Fetching CSV from AlphaVantage: %s", url)
         df = safe_read_csv_from_url(url, timeout=timeout)
