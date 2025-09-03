@@ -14,7 +14,7 @@ ml-dtypes==0.2.0
 wrapt==1.14.1
 
 # Numeric / SciPy stack (versions with manylinux wheels for Py3.10)
-numpy==1.25.3
+numpy==1.26.4
 scipy==1.11.4
 scikit-learn==1.5.1
 joblib==1.5.1
