@@ -104,6 +104,6 @@ Werkzeug==3.0.3
 wheel==0.44.0
 yfinance==0.2.43
 multitasking==0.0.11
-
+python-dotenv==1.0.1
 # Optional: enable if you actually need jieba
 # jieba==0.42.1
